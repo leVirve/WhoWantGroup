@@ -1,0 +1,84 @@
+<div>
+  <div>
+      <ul class="collection">
+        {% for aid in activities %}
+        <li class="collection-item avatar">
+          <i class="mdi-action-assessment circle green"></i>
+          <span class="title"><a href="activity/{{ aid }}">{{ activities[aid].title }}</a></span>
+          <p>{{ activities[aid].place }}<br>
+             {{ activities[aid].date }}
+          </p>
+          <a href="#!" class="secondary-content"><i class="mdi-action-grade"></i></a>
+        </li>
+        {% endfor %}
+      </ul>
+  </div>
+
+  <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+    <a class="btn-floating btn-large red modal-trigger" href="#modal-add"><i class="mdi-content-add"></i></a>
+  </div>
+  <!-- Modal Structure -->
+  <div id="modal-add" class="modal">
+    <div class="modal-content">
+      <h4>建立活動</h4>
+      <p>
+        <div class="row">
+          <form class="col s12" action="/activity" method="post">
+            <div class="row">
+              <div class="input-field col s6">
+                <input id="activity_name" type="text" class="validate">
+                <label for="activity_name">活動名稱</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <span class="grey-text">活動時間</span>
+                <input id="date" type="date" class="datepicker">
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="place" type="text" class="validate">
+                <label for="place">地點</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <span class="grey-text">人數上限</span>
+                <p class="range-field">
+                  <input type="range" name="limit" id="limit" min="3" max="12" />
+                </p>
+              </div>
+              <div class="input-field col s12">
+                <span class="grey-text">純性別團體</span>
+                <p class="switch">
+                  <label style="position: inherit;">
+                    否
+                    <input type="checkbox" id="genders">
+                    <span class="lever"></span>
+                    是
+                  </label>
+                </p>
+              </div>
+            </div>
+          </form>
+        </div>
+      </p>
+    </div>
+    <div class="modal-footer">
+      <button class="btn waves-effect waves-light modal-action modal-close" type="submit" name="action">開團囉
+        <i class="mdi-content-send right"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $( document ).ready(function(){
+    $('.modal-trigger').leanModal();
+    $('.datepicker').pickadate({
+      // selectMonths: true,
+      selectYears: 15
+    });
+  })
+</script>

@@ -1,0 +1,36 @@
+<nav>
+  <div class="nav-wrapper" style="padding:0 30px">
+    <a href="/" class="brand-logo left">jc</a>
+    <a href="#" data-activates="mobile-nav" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li><a href="/activity" style="font-size: 1.3rem"><i class="mdi-action-view-module left"></i>活動列表</a></li>
+      <li>
+        <form style="padding:0 10px">
+          <div class="input-field">
+            <input id="search" type="text" placeholder="活動搜尋" style="padding-left:35px;font-size: 1.3rem;" required>
+            <label for="search"><i class="mdi-action-search"></i></label>
+          </div>
+        </form>
+      </li>
+      <li><a href=""><i class="mdi-navigation-more-vert"></i></a></li>
+    </ul>
+    <ul class="side-nav" id="mobile-nav">
+      <li>
+        <form>
+          <div class="input-field">
+            <input id="search" type="text" required>
+            <label for="search"><i class="mdi-action-search"></i></label>
+          </div>
+        </form>
+      </li>
+      <li><a href="/activity" style="font-size: 1.5rem;"><i class="mdi-action-view-module"></i>活動列表</a></li>
+      <li><a href=""><i class="mdi-navigation-more-vert"></i>更多選項</a></li>
+    </ul>
+  </div>
+</nav>
+
+<script type="text/javascript">
+  $( document ).ready(function(){
+    $(".button-collapse").sideNav();
+  })
+</script>

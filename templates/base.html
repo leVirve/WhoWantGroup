@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset='utf8'>
+  <title>{% block title %}jc{% endblock %}</title>
+  <link rel="stylesheet" type="text/css" href="/static/css/materialize.min.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/css/materialize.min.css"> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+</head>
+<body style="min-width:320px">
+  {% include 'partial/navbar.html' %}
+
+  {% include content_template %}
+
+  {% include 'partial/footer.html' %}
+  <script src="/static/js/materialize.min.js"></script>
+  {% block tail_script %}
+  {% endblock %}
+</body>
+</html>
